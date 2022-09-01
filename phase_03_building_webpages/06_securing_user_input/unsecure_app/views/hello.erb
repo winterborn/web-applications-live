@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset=utf-8>
+    <title>Greeter app</title>
+  </head>
+  <body>
+  <%# Validating the request parameters when displaying the content (in the view) %>
+  <% if @name.scan(/[!@#$%^&*()_+{}\[\]:;'"\/\\?><.,]/).empty? %>
+    <p>
+      Hi <%= @name %>!
+    </p>
+  <% else %>
+    <p>
+      Name cannot contain invalid characters!
+    </p>
+  <% end %>
+  </body>
+</html>
