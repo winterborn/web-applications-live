@@ -3,13 +3,13 @@ require "rack/test"
 require_relative "../../app"
 
 def reset_albums_table
-  seed_sql = File.read("spec/seeds/albums_seeds.sql")
+  seed_sql = File.read("spec/seeds/test_seeds/albums_seeds.sql")
   connection = PG.connect({ host: "127.0.0.1", dbname: "music_library_test" })
   connection.exec(seed_sql)
 end
 
 def reset_artists_table
-  seed_sql = File.read("spec/seeds/artists_seeds.sql")
+  seed_sql = File.read("spec/seeds/test_seeds/artists_seeds.sql")
   connection = PG.connect({ host: "127.0.0.1", dbname: "music_library_test" })
   connection.exec(seed_sql)
 end
